@@ -4,6 +4,9 @@ import MuestraDatosOpor from './components/MuestraDatosOpor';
 import MuestraDatosCliente from './components/MuestraDatosCliente';
 import MuestraDatosContactos from './components/MuestraDatosContactos';
 import Principal from './components/Principal';
+import CrearCliente from './components/CrearCliente';
+import CrearOportunidades from './components/CrearOportunidades';
+import CrearContacto from './components/CrearContacto';
 import "./components/Principal"
 
 function App() {
@@ -15,6 +18,9 @@ function App() {
           <Route path='/MuestraDatosOpor' element={<MuestraDatosOpor/>}/>
           <Route path='/MuestraDatosCliente' element={<MuestraDatosCliente/>}/>
           <Route path='/MuestraDatosContactos' element={<MuestraDatosContactos/>}/>
+          <Route path='/CrearCliente' element={<CrearCliente/>}/>
+          <Route path='/CrearOportunidades' element={<CrearOportunidades/>}/>
+          <Route path='/CrearContactos' element={<CrearContacto/>}/>
         </Routes>
       </div>
     </BrowserRouter>
