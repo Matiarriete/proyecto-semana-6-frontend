@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+}
+
+nav{
+    background-color: antiquewhite;
+}
+
+#listNav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.elementosNav{
+    margin: 10px 10px;
+}
+
+button{
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    border: solid 1px black;
+    border-radius: 5px;
+}

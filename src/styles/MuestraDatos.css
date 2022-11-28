@@ -1,0 +1,7 @@
+.buttonsMuestraDatos{
+    margin: 25px 15px;
+}
+
+table, tr, td{
+    border: 1px solid black;
+}
