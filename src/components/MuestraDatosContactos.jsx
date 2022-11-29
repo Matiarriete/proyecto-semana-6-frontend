@@ -15,19 +15,18 @@ function MuestraDatos(){
     return(
         <>
         <Nav></Nav>
-        <body>
+        
             <h1>Contactos</h1>
             <div>
                 <button className="buttonsMuestraDatos" onClick={add}>Agregar</button>
                 <button className="buttonsMuestraDatos">Eliminar</button>
-                <button className="buttonsMuestraDatos">Modificar</button>
+                <button className="buttonsMuestraDatos" disabled>Modificar</button>
             </div>
             <table>
                 <tr>
                     <td></td>
                 </tr>
             </table>
-        </body>
         </>
     );
 }

@@ -11,6 +11,11 @@ function MuestraDatos(){
         navigation("/CrearCliente");
     }
 
+    const borrar = e => {
+        e.preventDefault();
+        navigation("/BorrarCliente");
+    }
+
     return(
         <>
         <Nav></Nav>
@@ -18,8 +23,8 @@ function MuestraDatos(){
             <h1>Clientes</h1>
             <div>
                 <button className="buttonsMuestraDatos" onClick={add}>Agregar</button>
-                <button className="buttonsMuestraDatos">Eliminar</button>
-                <button className="buttonsMuestraDatos">Modificar</button>
+                <button className="buttonsMuestraDatos" onClick={borrar}>Eliminar</button>
+                <button className="buttonsMuestraDatos" disabled>Modificar</button>
             </div>
             <table>
                 <tr>

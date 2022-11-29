@@ -7,6 +7,8 @@ import Principal from './components/Principal';
 import CrearCliente from './components/CrearCliente';
 import CrearOportunidades from './components/CrearOportunidades';
 import CrearContacto from './components/CrearContacto';
+import BorrarCliente from './components/BorrarCliente';
+import BorrarOportunidad from './components/BorrarOportunidad';
 import "./components/Principal"
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
           <Route path='/CrearCliente' element={<CrearCliente/>}/>
           <Route path='/CrearOportunidades' element={<CrearOportunidades/>}/>
           <Route path='/CrearContactos' element={<CrearContacto/>}/>
+          <Route path='/BorrarCliente' element={<BorrarCliente/>}/>
+          <Route path='/BorrarOportunidad' element={<BorrarOportunidad/>}/>
         </Routes>
       </div>
     </BrowserRouter>
