@@ -5,9 +5,6 @@ function Principal(){
     return(
         <>
         <Nav></Nav>
-        <body>
-            
-        </body>
         </>
     );
 }

@@ -1,16 +1,28 @@
 import Nav from "./Nav";
+import { useEffect, useState } from "react";
 
 function CrearContactos(){
+
+    const [oportunidades, setOportunidades] = useState();
+
+    useEffect(() => {
+        fetch("http://localhost:8080/oportunidades")
+        .then((response)=> response.json())
+        .then((data) => {setOportunidades(data)})
+    }, [])
+
+    
     return(
         <>
             <Nav></Nav>
             <form action="#">
                 <select name="Oportunidades" id="oporCliente" required> 
-                {/*Esta parte sera cargada con los datos de las oportunidades*/}
-                    <option value="Prueba">Prueba</option>
-                    <option value="Prueba1">Prueba1</option>
-                    <option value="Prueba2">Prueba2</option>
-                    <option value="Prueba3">Prueba3</option>
+                    {   oportunidades ?
+                        oportunidades.map(elemento=>(
+                            <option key={elemento.id} value={elemento.id}>{elemento.name}</option>
+                        )) :
+                        <option>...</option>
+                    }
                 </select>
                 <select name="tipo" id="tipoContacto" required> 
                 {/*Esta parte sera cargada con los datos de las oportunidades*/}

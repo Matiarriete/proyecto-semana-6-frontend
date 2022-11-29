@@ -19,7 +19,7 @@ function MuestraDatos(){
     return(
         <>
         <Nav></Nav>
-        <body>
+        
             <h1>Clientes</h1>
             <div>
                 <button className="buttonsMuestraDatos" onClick={add}>Agregar</button>
@@ -31,7 +31,6 @@ function MuestraDatos(){
                     <td></td>
                 </tr>
             </table>
-        </body>
         </>
     );
 }
