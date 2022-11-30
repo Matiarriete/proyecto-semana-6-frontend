@@ -1,6 +1,7 @@
 import "../styles/MuestraDatos.css"
 import { useNavigate } from "react-router-dom";
 import Nav from "./Nav";
+import { useState, useEffect } from "react";
 
 function MuestraDatos(){
 
@@ -16,6 +17,17 @@ function MuestraDatos(){
         navigation("/BorrarCliente");
     }
 
+    const [clientes, setClientes] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:8080/clientes")
+            .then((response) => response.json())
+            .then((data) => { 
+                console.log(data)
+                setClientes(data)
+            })
+    }, [])
+
     return(
         <>
         <Nav></Nav>
@@ -27,9 +39,26 @@ function MuestraDatos(){
                 <button className="buttonsMuestraDatos" disabled>Modificar</button>
             </div>
             <table>
-                <tr>
-                    <td></td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Mail</th>
+                        <th>Telefono</th>
+                        <th>clave Fiscal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        clientes.map(element => (
+                            <tr key={element.id}>
+                                <td>{element.name}</td>
+                                <td>{element.mail}</td>
+                                <td>{element.phoneNumber}</td>
+                                <td>{element.claveFiscal}</td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
             </table>
         </>
     );
