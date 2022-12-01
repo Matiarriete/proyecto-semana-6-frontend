@@ -11,7 +11,7 @@ function CrearContactos(){
         idOporCliente: -1
     });
     const [contacto, setContacto] = useState({
-        typeContact: "",
+        typeContact: "Telefono",
         result: "",
         contactDate: ""
     });
@@ -89,9 +89,9 @@ function CrearContactos(){
                     <option value="Correo">Correo</option>
                     <option value="Visita Comercial">Visita Comercial</option>
                 </select>
-                <textarea name="result" type="text" placeholder="Ingrese un resumen de lo hablado en el contacto" onChange={handleChange}/>
+                <textarea name="result" type="text" placeholder="Ingrese un resumen de lo hablado en el contacto" onChange={handleChange} required/>
                 <label htmlFor="calendarContacto">Ingrese la fecha del contacto</label>
-                <input name="contactDate" type="date" id="calendarContacto" onChange={handleChange}/>
+                <input name="contactDate" type="date" id="calendarContacto" onChange={handleChange} required/>
                 <button type="submit">Enviar</button>
             </form>
         </>

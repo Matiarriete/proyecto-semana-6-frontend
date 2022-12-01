@@ -6,15 +6,26 @@ import {useEffect, useState} from "react"
 function MuestraDatos(){
 
     const navigation = useNavigate();
+    const [borrado, setBorrado] = useState([]);
+
+    function borrar(id){
+        fetch(`http://localhost:8080/borrarOpor/${id}`,{
+            method: "POST",
+        }
+        )
+            .then((response) => response.json())
+            .then((data) => { 
+                setBorrado()
+            })
+    }
 
     const add = e => {
         e.preventDefault();
         navigation("/CrearOportunidades");
     }
 
-    const borrar = e => {
-        e.preventDefault();
-        navigation("/BorrarOportunidad");
+    function ver(id){
+        navigation(`/VerOportunidadCliente/${id}`);
     }
 
     const [oportunidades, setOportunidades] = useState([]);
@@ -25,7 +36,7 @@ function MuestraDatos(){
             .then((data) => { 
                 setOportunidades(data)
             })
-    }, [])
+    }, borrado)
 
     return(
         <>
@@ -33,29 +44,33 @@ function MuestraDatos(){
             <h1>Oportunidades</h1>
             <div>
                 <button className="buttonsMuestraDatos" onClick={add}>Agregar</button>
-                <button className="buttonsMuestraDatos" onClick={borrar}>Eliminar</button>
-                <button className="buttonsMuestraDatos" disabled>Modificar</button>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Mail</th>
-                        <th>Telefono</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        oportunidades.map(element => (
-                            <tr key={element.id}>
-                                <td>{element.name}</td>
-                                <td>{element.mail}</td>
-                                <td>{element.phoneNumber}</td>
+            <main className="mainDatos">
+                <div className="datosMuestra">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Mail</th>
+                                <th>Telefono</th>
                             </tr>
-                        ))
-                    }
-                </tbody>
-            </table>
+                        </thead>
+                        <tbody>
+                            {
+                                oportunidades.map(element => (
+                                    <tr key={element.id}>
+                                        <td>{element.name}</td>
+                                        <td>{element.mail}</td>
+                                        <td>{element.phoneNumber}</td>
+                                        <td><button className="buttonsMuestraDatos" onClick={() => borrar(element.id)}>Borrar</button></td>
+                                        <td><button className="buttonsMuestraDatos" onClick={() => ver(element.id)}>Ver</button></td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </main>
         </>
     );
 }

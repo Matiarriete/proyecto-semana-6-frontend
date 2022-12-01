@@ -37,7 +37,7 @@ function CrearOportunidades(){
                 claveFiscal: oportunidades.claveFiscal,
             })
         }).then(() => {
-            navigation("/MuestraDatosOportunidades")
+            navigation("/MuestraDatosOpor")
         })
     }
 

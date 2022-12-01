@@ -2,6 +2,30 @@
     margin: 25px 15px;
 }
 
-table, tr, td{
-    border: 1px solid black;
+.mainDatos{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.datosMuestra{
+    background: white;
+    padding: 1rem;
+    border: 1px solid #999;
+    border-radius: 2px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: minmax(400px, 50%);
+    height: minmax(400px, 50%);
+}
+
+td, th{
+    padding: 15px;
+}
+
+.datosContactoMustra{
+    display:none;
 }
