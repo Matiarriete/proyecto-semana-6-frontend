@@ -91,7 +91,7 @@ function CrearContactos(){
                 </select>
                 <textarea name="result" type="text" placeholder="Ingrese un resumen de lo hablado en el contacto" onChange={handleChange} required/>
                 <label htmlFor="calendarContacto">Ingrese la fecha del contacto</label>
-                <input name="contactDate" type="date" id="calendarContacto" onChange={handleChange} required/>
+                <input name="contactDate" type="Date" id="calendarContacto" onChange={handleChange} required/>
                 <button type="submit">Enviar</button>
             </form>
         </>

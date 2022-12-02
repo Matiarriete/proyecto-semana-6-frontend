@@ -17,7 +17,7 @@ function MuestraDatos(){
     }
 
     function borrar(id){
-        fetch(`http://localhost:8080/borrarClient/${id}`,{
+        fetch(`http://localhost:8080/contacto/${id}`,{
             method: "POST",
         }
         )
@@ -61,7 +61,7 @@ function MuestraDatos(){
                                     <tr key={element.id}>
                                         <td>{element.typeContact}</td>
                                         <td>{element.result}</td>
-                                        <td>{element.contactDate}</td>
+                                        <td>{element.contactDate[0] + "-" + element.contactDate[1] + "-" + element.contactDate[2]}</td>
                                         <td>{element.nameOporCliente}</td>
                                         <td><button className="buttonsMuestraDatos" onClick={() => borrar(element.id)}>Borrar</button></td>
                                         
